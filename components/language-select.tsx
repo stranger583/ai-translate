@@ -38,16 +38,15 @@ function LanguageSelect() {
     newTranslateLanguages[idx] = value
     setTranslateLanguages(newTranslateLanguages)
   }
-
   return (
     <div className='flex gap-2 w-full'>
       {translateLanguages.map((translateLanguage, index) =>
         <Select key={index} onValueChange={value => handleChangeLanguage(value, index)}>
-          <SelectTrigger className="w-full grow border border-white rounded-sm p-2 h-10">
+          <SelectTrigger className="w-full grow border border-zinc-800 bg-zinc-900 rounded-sm p-2 h-10 outline-none">
             <SelectValue placeholder="選擇語言">{translateLanguage}</SelectValue>
           </SelectTrigger>
           <SelectContent
-            className='w-25 border-white rounded-sm border max-h-96 overflow-auto'
+            className='w-25 border-white  rounded-sm border max-h-96 overflow-auto'
             position="popper"
             sideOffset={10}
           >
@@ -55,7 +54,7 @@ function LanguageSelect() {
               <SelectItem
                 value={langue}
                 key={langue}
-                className='m-2 p-2 hover:bg-slate-500 hover:outline-none rounded-sm'
+                className='m-2 p-2 hover:outline-none rounded-sm'
               >
                 {langue}
               </SelectItem>))}
